@@ -15,8 +15,8 @@ int aux;
 
 for (aux = 0; aux < 10; aux++)
 {
-printf("%d", aux);
+putchar((aux % 10) + '0');
 }
-printf("\n");
+putchar('\n');
 return (0);
 }
