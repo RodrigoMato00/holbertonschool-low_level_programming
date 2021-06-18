@@ -1,19 +1,24 @@
 #include <stdio.h>
 /**
- *main - Entry point
- *
- *Description: This program prints all letters from a-z in lower case
- *Return: Returns 0 upon successful completion
+ * main - main block
+ * Description: Print all numbers of base64 in lowercase.
+ * You can only use `putchar`, and only 3 times.
+ * Return: 0
  */
 int main(void)
 {
-char letter = 'a';
+char c;
+int i;
 
-while (letter <= 'z')
+for (i = 0; i < 10; i++)
 {
-putchar(letter);
-letter++;
+putchar(i + '0');
+}
+for (c = 'a'; c < 'g'; c++)
+{
+putchar(c);
 }
 putchar('\n');
+
 return (0);
 }
