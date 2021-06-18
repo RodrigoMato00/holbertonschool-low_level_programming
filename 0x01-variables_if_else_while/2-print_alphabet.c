@@ -1,19 +1,24 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
+
 /**
- *main - Entry point
+ * main - Entry point
  *
- *Description: This program prints all letters from a-z in lower case
- *Return: Returns 0 upon successful completion
+ * This function print the alphabet a...z, without q and e
+ *
+ * Return: Always 0 (success)
  */
 int main(void)
 {
-char letter = 'a';
+	char start = 'z';
+	char aux;
 
-while (letter <= 'z')
-{
-putchar(letter);
-letter++;
-}
-putchar('\n');
-return (0);
+	for (aux = 'a'; aux <= start; aux++)
+	{
+		if (aux != 'q' && aux != 'e')
+			putchar(aux);
+	}
+	putchar('\n');
+	return (0);
 }
