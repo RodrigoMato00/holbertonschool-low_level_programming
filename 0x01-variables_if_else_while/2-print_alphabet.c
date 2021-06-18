@@ -3,22 +3,29 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ *main - Entry point
+ *this fuction print the alphabet a...z, A...Z
  *
- * This function print the alphabet a...z, without q and e
- *
- * Return: Always 0 (success)
+ *Return: Always 0 (success)
+ *Description: This program prints all letters from a-z in lower case
+ *Return: Returns 0 upon successful completion
  */
 int main(void)
 {
-	char start = 'z';
-	char aux;
+char start = 'z';
+char aux;
+for (aux = 'a'; aux <= start; aux++)
+char letter = 'a';
 
-	for (aux = 'a'; aux <= start; aux++)
-	{
-		if (aux != 'q' && aux != 'e')
-			putchar(aux);
-	}
-	putchar('\n');
-	return (0);
+while (letter <= 'z')
+{
+putchar(aux);
+putchar(letter);
+letter++;
+}
+putchar('\n');
+{
+putchar(aux);
+}
+return (0);
 }
