@@ -2,17 +2,17 @@
 /**
  *main - Entry point
  *
- *Description: This program prints all letters from a-z in lower case
- *Return: Returns 0 upon successful completion
+ *Description: This program prints the letters in reverse order
+ *Return: 0 upon successful completion
  */
 int main(void)
 {
-char letter = 'a';
+char letter = 'z';
 
-while (letter <= 'z')
+while (letter >= 'a')
 {
 putchar(letter);
-letter++;
+letter--;
 }
 putchar('\n');
 return (0);
