@@ -11,12 +11,12 @@
  */
 int main(void)
 {
-	int aux;
+int aux;
 
-	for (aux = 0; aux < 10; aux++)
-	{
-		printf("%d", aux);
-	}
-	printf("\n");
-	return (0);
+for (aux = 0; aux < 10; aux++)
+{
+printf("%d", aux);
+}
+printf("\n");
+return (0);
 }
