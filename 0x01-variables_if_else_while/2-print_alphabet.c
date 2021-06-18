@@ -16,11 +16,3 @@ for (aux = 'a'; aux <= start; aux++)
 {
 putchar(aux);
 }
-start = 'Z';
-for (aux = 'A'; aux <= start; aux++)
-{
-putchar(aux);
-}
-putchar('\n');
-return (0);
-}
