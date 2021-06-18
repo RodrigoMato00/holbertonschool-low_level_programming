@@ -1,19 +1,20 @@
 #include <stdio.h>
 /**
- *main - Entry point
- *
- *Description: This program prints all letters from a-z in lower case
- *Return: Returns 0 upon successful completion
+ * main - main block
+ * Description: Use `putchar` to print all letters but the letter 'q' and 'e'.
+ * Return: 0
  */
 int main(void)
 {
-char letter = 'a';
+	char c = 'a';
 
-while (letter <= 'z')
-{
-putchar(letter);
-letter++;
-}
-putchar('\n');
-return (0);
+	while (c <= 'z')
+	{
+		if (c != 'q' && c != 'e')
+			putchar(c);
+		c++;
+	}
+	putchar('\n');
+
+	return (0);
 }
