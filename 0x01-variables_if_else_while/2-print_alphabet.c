@@ -16,3 +16,5 @@ for (aux = 'a'; aux <= start; aux++)
 {
 putchar(aux);
 }
+return (0);
+}
