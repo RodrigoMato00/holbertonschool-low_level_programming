@@ -16,5 +16,9 @@ for (aux = 'a'; aux <= start; aux++)
 {
 putchar(aux);
 }
+putchar('\n')
+{
+putchar(aux);
+}
 return (0);
 }
