@@ -1,19 +1,22 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
+
 /**
- *main - Entry point
+ * main - Entry point
  *
- *Description: This program prints all letters from a-z in lower case
- *Return: Returns 0 upon successful completion
+ * This function print numbers from 0...9
+ *
+ * Return: Always 0 (success)
  */
 int main(void)
 {
-char letter = 'a';
+	int aux;
 
-while (letter <= 'z')
-{
-putchar(letter);
-letter++;
-}
-putchar('\n');
-return (0);
+	for (aux = 0; aux < 10; aux++)
+	{
+		printf("%d", aux);
+	}
+	printf("\n");
+	return (0);
 }
