@@ -5,27 +5,31 @@
  *
  * Return: Always 0 (success)
  */
+
 int main(void)
 {
-int aux;
-int aux2;
+int i, j, k;
 
-for (aux = 0; aux < 10; aux++)
+i = 0;
+
+while (i < 100)
 {
-for (aux2 = 0; aux2 < 10; aux2++)
+j = i % 10; /* singles digit */
+k = i / 10; /* doubles digit */
+
+if (k < j)
 {
-if (aux != aux2 && aux < aux2)
+putchar(k + '0');
+putchar(j + '0');
+if (i < 89)
 {
-putchar((aux % 10) + '0');
-putchar((aux2 % 10) + '0');
-if (aux != 8 || aux2 != 9)
-{
-putchar(',');
-putchar(' ');
+putchar(44);
+putchar(32);
 }
 }
-}
+i++;
 }
 putchar('\n');
+
 return (0);
 }
