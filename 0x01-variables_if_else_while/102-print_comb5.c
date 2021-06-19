@@ -17,28 +17,27 @@
  */
 int main(void)
 {
-	int aux;
-	int aux2;
+int aux;
+int aux2;
 
-	for (aux = 0; aux < 100; aux++)
-	{
-		for (aux2 = 0; aux2 < 100; aux2++)
-		{
-			if (aux != aux2 && aux < aux2)
-			{
-				putchar(((aux / 10) % 10) + '0');
-				putchar((aux % 10) + '0');
-				putchar(' ');
-				putchar(((aux2 / 10) % 10) + '0');
-				putchar((aux2 % 10) + '0');
-				if (aux != 98 || aux2 != 99)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
-		}
-	}
-	putchar('\n');
-	return (0);
+for (aux = 0; aux < 100; aux++)
+{
+for (aux2 = 0; aux2 < 100; aux2++)
+{
+if (aux != aux2 && aux < aux2)
+{
+putchar(((aux / 10) % 10) + '0');
+putchar((aux % 10) + '0');
+putchar(' ');
+putchar(((aux2 / 10) % 10) + '0');
+putchar((aux2 % 10) + '0');
+if (aux != 98 || aux2 != 99)
+{
+putchar(',');
+putchar(' ');
+}
+}
+}
+}
+putchar('\n');
 }
