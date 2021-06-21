@@ -8,7 +8,7 @@
  *
  *Return: Always 0 (success)
  *Description: This program prints all letters from a-z in lower case
- *Return: Returns 0 upon successful completion
+ *Return: Returns 0 
  */
 int main(void)
 {
