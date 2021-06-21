@@ -3,7 +3,7 @@
  *main - Entry point
  *
  *Description: This program prints the letters in reverse order
- *Return: 0 upon successful completion
+ *Return: 0
  */
 int main(void)
 {
