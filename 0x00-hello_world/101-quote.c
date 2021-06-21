@@ -5,7 +5,7 @@
  *
  * prints a string
  *
- * Return: Always 0 (Success)
+ * Return: 0 if the function went through to completion successfully
  */
 int main(void)
 {
