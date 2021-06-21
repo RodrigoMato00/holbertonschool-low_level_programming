@@ -7,7 +7,7 @@
  *
  * This function print the alphabet a...z
  *
- * Return: Always 0 (success)
+ * Return: 0
  */
 int main(void)
 {
