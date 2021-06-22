@@ -6,7 +6,7 @@
  */
 int  main(void)
 {
-char holberton[] = "holberton";
+char holberton[] = "Holberton";
 int i = 0;
 while (holberton[i] != '\0')
 {
