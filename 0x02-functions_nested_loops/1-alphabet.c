@@ -1,4 +1,4 @@
-include "holberton.h"
+#include "holberton.h"
 
 /**
  *print_alphabet -  this fuction print alphabet using the fuction _putchar
@@ -7,13 +7,11 @@ include "holberton.h"
  */
 void print_alphabeth(void)
 {
-char letter;
-for (letter = 'a'; letter <= 'z'; letter++)
-{
-_putchar(letter)
-}
-{
-_putchar('\n');
-}
-return (0);
+	char c = 'a';
+	while (c <= 'z')
+	{
+		_putchar(c);
+		c++;
+	}
+	_putchar('\n');
 }
