@@ -4,7 +4,7 @@
  *Description: you are not allowed to include a standar libraries
  *Return: 0
  */
-int  main(void)
+int main(void)
 {
 char holberton[] = "Holberton";
 int i = 0;
