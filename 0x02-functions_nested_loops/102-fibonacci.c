@@ -8,27 +8,18 @@
  */
 int main(void)
 {
-	int count = 2;
-	long int i = 1, j = 2;
-	long int k;
+int i = 1, j = 2, total = 0;
+int k;
 
-	printf("%lu, ", i);
-	while (count <= 50)
-	{
-		if (count == 50)
-		{
-			printf("%lu\n", j);
-		}
-		else
-		{
-			printf("%lu, ", j);
-		}
+while (j < 4000000)
+{
+if (j % 2 == 0)
+total += j;
 
-		k = j;
-		j += i;
-		i = k;
-		count++;
-	}
-
-	return (0);
+k = j;
+j += i;
+i = k;
+}
+printf("%d\n", total);
+return (0);
 }
