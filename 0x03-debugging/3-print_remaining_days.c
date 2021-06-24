@@ -1,4 +1,4 @@
-[10:46, 24/6/2021] Rodrigo Mato: #include <stdio.h>
+#include <stdio.h>
 #include "holberton.h"
 
 /**
