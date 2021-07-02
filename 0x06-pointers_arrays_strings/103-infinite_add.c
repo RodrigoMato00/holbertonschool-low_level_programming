@@ -1,53 +1,55 @@
 #include "holberton.h"
 
 /**
- *infinite_add - concatenates two strings
- *@n1: number 1
- *@n2: number 2
- *@r: pointer that contains sum of numbers
- *@size_r: size of buffer that contains sum of numbers
- *Return: the pointer with new number
+ * infinite_add - Add numbers
+ * Description: This function add two numbers
+ * @n1: First number to add
+ * @n2: Second number to add
+ * @r: Buffer that stpre the result
+ * @size_r: Size of the buffer
+ * Return: The result of @n1 + @n2, if the result < @r
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int longn1;
-	int longn2;
-	int bigger;
-	int op;
-	int ad;
+	int c = 0, c1 = 0, c2 = 0, acum = 0;
 
-	for (longn1 = 0; n1[longn1] != '\0'; longn1++)
-		for (longn2 = 0; n2[longn2] != '\0'; longn2++)
-			if (longn1 >= longn2)
-				bigger = longn1;
-			else
-				bigger = longn2;
-	if (size_r <= (bigger + 1))
-		return (0);
-	while (bigger > 0)
+	size_r--;
+
+	while (*(n1 + c1) != '\0' || *(n2 + c2) != '\0')
 	{
-		if (longn1 >= 0 && longn2 >= 0)
-		{
-			op = (*(n1 + longn1) - '0') + (*(n2 + longn2) - '0') + ad;
-		}
-		else
-		{
-			if (longn1 < 0 && longn2 >= 0)
-				op = (*(n2 + longn2) - '0') + ad;
-			else
-			{
-				if (longn1 >= 0 && longn2 < 0)
-					op = (*(n1 + longn1) - '0') + ad;
-			}
-		}
-		*(r + bigger) = (op % 10) + '0';
-		ad = op / 10;
-		longn1--;
-		longn2--;
-		bigger--;
+		if (*(n1 + c1) != '\0')
+			c1++;
+		if (*(n2 + c2) != '\0')
+			c2++;
 	}
-	if (*(r + 0) == 0)
-		return (r + 1);
-	r[bigger + 1] = '\n';
+	c1--;
+	c2--;
+	while (c1 >= 0 && c2 >= 0)
+	{
+		*(r + c) = ((*(n1 + c1) + *(n2 + c2) - 96 + acum) % 10) + 48;
+		acum = ((*(n1 + c1) + *(n2 + c2) - 96) / 10);
+		c++;
+		c1--;
+		c2--;
+	}
+	while (c1 >= 0)
+	{
+		*(r + c) = ((*(n1 + c1) - 48 + acum) % 10) + 48;
+		acum = ((*(n1 + c1) - 48 + acum) / 10);
+		c++;
+		c1--;
+	}
+	while (c2 >= 0)
+	{
+		*(r + c) = ((*(n2 + c2) - 48 + acum) % 10) + 48;
+		acum = ((*(n2 + c2) - 48 + acum) / 10);
+		c++;
+		c2--;
+	}
+	*(r + c) = acum + 48;
+	if (c >= size_r)
+	{
+		return (0);
+	}
 	return (r);
 }
