@@ -10,5 +10,21 @@
 
 int main(void)
 {
-return (0);
+	int co;
+	int  ch;
+	int  a;
+
+	srand(time(0));
+	ch = 2772;
+	co = 0;
+
+	while (ch > 122)
+	{
+		a = (rand() % 100);
+		printf("%c", a);
+		ch -= a;
+		co++;
+	}
+	printf("%c", ch);
+	return (0);
 }
