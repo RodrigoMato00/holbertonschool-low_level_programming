@@ -3,22 +3,21 @@
 #include <stdlib.h>
 
 /**
- * main - Prints addition positive numbers by a new line.
- * @argc: The number of arguments passed to the program.
- * @argv: An array of pointers to the arguments.
+ * main - Prints addition
+ * @argc: The number of arguments.
+ * @argv: array of pointers the arguments.
  *
- * Return: If one of the numbers contains symbols that are non-digits - 1.
- *         Otherwise - 0.
+ * Return: 1 or 0
  */
 int main(int argc, char *argv[])
 {
-	int num, digit, sum = 0;
+	int num, dig, sum = 0;
 
 	for (num = 1; num < argc; num++)
 	{
-		for (digit = 0; argv[num][digit]; digit++)
+		for (dig = 0; argv[num][dig]; dig++)
 		{
-			if (argv[num][digit] < '0' || argv[num][digit] > '9')
+			if (argv[num][dig] < '0' || argv[num][dig] > '9')
 			{
 				printf("Error\n");
 				return (1);
