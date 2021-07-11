@@ -17,27 +17,36 @@
  */
 int main(void)
 {
-int aux;
-int aux2;
+	int i, j;
+	int a, b, c, d;
 
-for (aux = 0; aux < 100; aux++)
-{
-for (aux2 = 0; aux2 < 100; aux2++)
-{
-if (aux != aux2 && aux < aux2)
-{
-putchar(((aux / 10) % 10) + '0');
-putchar((aux % 10) + '0');
-putchar(' ');
-putchar(((aux2 / 10) % 10) + '0');
-putchar((aux2 % 10) + '0');
-if (aux != 98 || aux2 != 99)
-{
-putchar(',');
-putchar(' ');
-}
-}
-}
-}
-putchar('\n');
+	for (i = 0; i < 100; i++)
+	{
+		a = i / 10; /* doubles fnum */
+		b = i % 10; /* singles fnum */
+
+		for (j = 0; j < 100; j++)
+		{
+			c = j / 10; /* doubles snum */
+			d = j % 10; /* singles snum */
+
+			if (a < c || (a == c && b < d))
+			{
+				putchar(a + '0');
+				putchar(b + '0');
+				putchar(32);
+				putchar(c + '0');
+				putchar(d + '0');
+
+				if (!(a == 9 && b == 8))
+				{
+					putchar(44);
+					putchar(32);
+				}
+			}
+		}
+	}
+	putchar(10);
+
+	return (0);
 }
