@@ -11,39 +11,39 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	struct dog *my_dog;
-	int a, b, c;
-	char *n, *o;
+	char *namec, *ownerc;
+	int a = 0, b = 0, c;
 
 	my_dog = malloc(sizeof(struct dog));
 	if (my_dog == NULL)
 		return (NULL);
-
-	for (a = 0; name[a] != '\0'; a++)
-		;
-	for (b = 0; owner[b] != '\0'; b++)
-		;
-
-	n = malloc(sizeof(char) * b + 1);
-	if (n == NULL)
+	while (*(name + a) != '\0')
+		a++;
+	while (*(owner + b) != '\0')
+		b++;
+	namec = malloc(sizeof(char) * (a + 1));
+	if (namec == NULL)
 	{
 		free(my_dog);
 		return (NULL);
 	}
-	o = malloc(sizeof(char) * a + 1);
-	if (o == NULL)
+	ownerc = malloc(sizeof(char) * (b + 1));
+	if (ownerc == NULL)
 	{
-		free(n);
+		free(namec);
 		free(my_dog);
 		return (NULL);
 	}
 	for (c = 0; c <= a; c++)
-		n[c] = name[c];
+	{
+		*(namec + c) = *(name + c);
+	}
 	for (c = 0; c <= b; c++)
-		o[c] = owner[c];
-
-	my_dog->name = n;
+	{
+		*(ownerc + c) = *(owner + c);
+	}
+	my_dog->name = namec;
 	my_dog->age = age;
-	my_dog->owner = o;
-
+	my_dog->owner = ownerc;
 	return (my_dog);
 }
