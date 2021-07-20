@@ -7,7 +7,7 @@
  */
 void free_dog(dog_t *d)
 {
-	dog_t *my_dog =d;
+	dog_t *my_dog = d;
 
 	if (d)
 	{
