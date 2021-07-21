@@ -38,4 +38,5 @@ int main(int argc, char *argv[])
 	printf("%d\n", o(a, b));
 
 	return (0);
+	exit(100);
 }

@@ -1,0 +1,8 @@
+#include <stdlib.h>
+#include <stdio.h>
+/**
+ *main - entri fuction
+ *
+ *
+ */
+int main(int argc, char *argv[])
