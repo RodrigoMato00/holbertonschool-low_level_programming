@@ -1,86 +1,103 @@
-#include "variadic_functions.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
+#include "variadic_functions.h"
 
 /**
- * _printchar - print char type element from va_list
- * @list: va_list passed to function
+ * t_char - print a character
+ *@va:character
+ *
+ * Return: no return
  */
-void _printchar(va_list list)
+void t_char(va_list va)
 {
-	printf("%c", va_arg(list, int));
+	int c;
+
+	c = va_arg(va, int);
+	printf("%c", c);
 }
 
 /**
- * _printstr - print string element from va_list
- * @list: va_list passed to function
+ * t_integer - print an integer
+ *@va:number 1
+ *
+ * Return: no return
  */
-void _printstr(va_list list)
+void t_integer(va_list va)
 {
-	char *s;
+	printf("%d", va_arg(va, int));
+}
 
-	s = va_arg(list, char *);
+/**
+ * t_float - print a float
+ *@va:float number
+ *
+ * Return: no return
+ */
+void t_float(va_list va)
+{
+	double c;
+
+	c = va_arg(va, double);
+	printf("%f", c);
+}
+/**
+ * t_string - print a string
+ *@va: pointer to string
+ *
+ * Return: no return
+ */
+void t_string(va_list va)
+{
+	char *s = va_arg(va, char *);
+
 	if (s == NULL)
-		s = "(nil)";
+	{
+		printf("(nil)");
+		return;
+	}
 	printf("%s", s);
 }
 
-/**
- * _printfloat - print float type element from va_list
- * @list: va_list passed to function
- */
-void _printfloat(va_list list)
-{
-	printf("%f", va_arg(list, double));
-}
 
 /**
- * _printint - print int type element from va_list
- * @list: va_list passed to function
- */
-void _printint(va_list list)
-{
-	printf("%d", va_arg(list, int));
-}
-
-/**
- * print_all - print anything passed if char, int, float, or string.
- * @format: string of formats to use and print
+ * print_all - prints anything
+ *@format: format
+ *
+ * Return: no return
  */
 void print_all(const char * const format, ...)
 {
-	va_list args_list;
-	int i = 0;
-	char op;
-	char *s;
+	int i, j, count;
+	va_list valist;
+	types difftypes[] = {
+		{'c', t_char},
+		{'i', t_integer},
+		{'f', t_float},
+		{'s', t_string},
+	};
+	char *s = "";
 
-	va_start(args_list, format);
-	while (format && *(format + i) != '\0')
+	i = 0;
+	count = 0;
+	va_start(valist, format);
+	while (format != NULL && format[i])
 	{
-		op = *(format + i);
-		switch (op)
+		j = 0;
+		while (j < 4)
 		{
-		case 'c':
-			printf("%c", va_arg(args_list, int));
-			break;
-		case 'i':
-			printf("%d", va_arg(args_list, int));
-			break;
-		case 'f':
-			printf("%f", va_arg(args_list, double));
-			break;
-		case 's':
-			s = va_arg(args_list, char *);
-			if (!s)
-				s = "(nil)";
-			printf("%s", s);
-			break;
+			if (format[i] == difftypes[j].t)
+			{
+				printf("%s", s);
+				difftypes[j].f(valist);
+				s = ", ";
+				count++;
+				break;
+			}
+			j++;
+
 		}
-		if ((op == 'c' || op == 'i' || op == 'f' || op == 's') && *(format + i + 1))
-			printf(", ");
 		i++;
 	}
 	printf("\n");
-	va_end(args_list);
 }
