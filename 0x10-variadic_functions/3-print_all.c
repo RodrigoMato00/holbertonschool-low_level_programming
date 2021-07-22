@@ -1,103 +1,45 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <stdarg.h>
-#include "variadic_functions.h"
+#include <stdio.h>
 
-/**
- * t_char - print a character
- *@va:character
- *
- * Return: no return
- */
-void t_char(va_list va)
-{
-	int c;
-
-	c = va_arg(va, int);
-	printf("%c", c);
-}
-
-/**
- * t_integer - print an integer
- *@va:number 1
- *
- * Return: no return
- */
-void t_integer(va_list va)
-{
-	printf("%d", va_arg(va, int));
-}
-
-/**
- * t_float - print a float
- *@va:float number
- *
- * Return: no return
- */
-void t_float(va_list va)
-{
-	double c;
-
-	c = va_arg(va, double);
-	printf("%f", c);
-}
-/**
- * t_string - print a string
- *@va: pointer to string
- *
- * Return: no return
- */
-void t_string(va_list va)
-{
-	char *s = va_arg(va, char *);
-
-	if (s == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
-	printf("%s", s);
-}
-
-
-/**
- * print_all - prints anything
- *@format: format
- *
- * Return: no return
- */
+ /**
+  * print_all - Prints all
+  * Description: This is a variadic function prints all
+  * @format: Format of data
+  * Return:
+  */
 void print_all(const char * const format, ...)
 {
-	int i, j, count;
-	va_list valist;
-	types difftypes[] = {
-		{'c', t_char},
-		{'i', t_integer},
-		{'f', t_float},
-		{'s', t_string},
-	};
-	char *s = "";
+	va_list args_list;
+	int i = 0;
+	char op;
+	char *s;
 
-	i = 0;
-	count = 0;
-	va_start(valist, format);
-	while (format != NULL && format[i])
+	va_start(args_list, format);
+	while (format && *(format + i) != '\0')
 	{
-		j = 0;
-		while (j < 4)
+		op = *(format + i);
+		switch (op)
 		{
-			if (format[i] == difftypes[j].t)
-			{
-				printf("%s", s);
-				difftypes[j].f(valist);
-				s = ", ";
-				count++;
-				break;
-			}
-			j++;
-
+		case 'c':
+			printf("%c", va_arg(args_list, int));
+			break;
+		case 'i':
+			printf("%d", va_arg(args_list, int));
+			break;
+		case 'f':
+			printf("%f", va_arg(args_list, double));
+			break;
+		case 's':
+			s = va_arg(args_list, char *);
+			if (!s)
+				s = "(nil)";
+			printf("%s", s);
+			break;
 		}
+		if ((op == 'c' || op == 'i' || op == 'f' || op == 's') && *(format + i + 1))
+			printf(", ");
 		i++;
 	}
 	printf("\n");
+	va_end(args_list);
 }
