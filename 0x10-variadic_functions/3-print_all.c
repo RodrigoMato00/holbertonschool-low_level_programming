@@ -1,8 +1,9 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include "variadic_functions.h"
 
  /**
-  * print_all - Prints all
+  * print_all - Prints all bla bla bla bla
   * Description: This is a variadic function prints all
   * @format: Format of data
   * Return:
