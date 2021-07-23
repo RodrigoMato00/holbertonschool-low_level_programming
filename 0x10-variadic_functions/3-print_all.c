@@ -2,45 +2,49 @@
 #include <stdio.h>
 #include "variadic_functions.h"
 
- /**
-  * print_all - Prints all bla bla bla bla
-  * Description: This is a variadic function prints all
-  * @format: Format of data
-  * Return:
-  */
+/**
+ *print_all - function that prints anything
+ *@format: this is a format
+ */
 void print_all(const char * const format, ...)
 {
-	va_list args_list;
+	va_list list;
+	int n = 0;
 	int i = 0;
-	char op;
-	char *s;
+	char *comma = ", ";
+	char *c;
 
-	va_start(args_list, format);
-	while (format && *(format + i) != '\0')
+	va_start(list, format);
+
+	while (format && format[i])
+	       i++;
+
+	while (format && format[n])
 	{
-		op = *(format + i);
-		switch (op)
+		if (n == (i - 1))
+		{
+			comma = "";
+		}
+		switch (format[n])
 		{
 		case 'c':
-			printf("%c", va_arg(args_list, int));
+			printf("%c%s", va_arg(list, int), comma);
 			break;
 		case 'i':
-			printf("%d", va_arg(args_list, int));
+			printf("%c%s", va_arg(list, int), comma);
 			break;
 		case 'f':
-			printf("%f", va_arg(args_list, double));
+			printf("%f%s", va_arg(list, double), comma);
 			break;
 		case 's':
-			s = va_arg(args_list, char *);
-			if (!s)
-				s = "(nil)";
-			printf("%s", s);
+			c = va_arg(list, char *);
+			if (c == NULL)
+				c = "(nil)";
+					printf("%s%s", c, comma);
 			break;
 		}
-		if ((op == 'c' || op == 'i' || op == 'f' || op == 's') && *(format + i + 1))
-			printf(", ");
-		i++;
+		n++;
 	}
 	printf("\n");
-	va_end(args_list);
+	va_end(list);
 }
