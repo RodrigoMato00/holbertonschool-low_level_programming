@@ -31,7 +31,7 @@ void print_all(const char * const format, ...)
 			printf("%c%s", va_arg(list, int), comma);
 			break;
 		case 'i':
-			printf("%c%s", va_arg(list, int), comma);
+			printf("%d%s", va_arg(list, int), comma);
 			break;
 		case 'f':
 			printf("%f%s", va_arg(list, double), comma);
