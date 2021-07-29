@@ -24,7 +24,7 @@ list_t *add_node(list_t **head, const char *str)
 	        return (NULL);
 	}
 
-	for (a = 0; str[a]);
+	for (a = 0; str[a])
 		a++;
 
 	jeje->str = x;
