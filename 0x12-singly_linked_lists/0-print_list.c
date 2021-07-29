@@ -16,9 +16,9 @@ size_t print_list(const list_t *h)
 	jeje = h;
 	while (jeje != NULL)
 	{
-		printf("[%d] %s\n", jeje ->len, jeje->str);
-	        jeje = jeje->next;
-		a ++;
+		printf("[%d] %s\n", jeje->len, jeje->str);
+		jeje = jeje->next;
+		a++;
 	}
 	return (a);
 }
