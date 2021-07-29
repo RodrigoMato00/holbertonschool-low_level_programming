@@ -16,7 +16,10 @@ size_t print_list(const list_t *h)
 	jeje = h;
 	while (jeje != NULL)
 	{
-		printf("[%d] %s\n", jeje->len, jeje->str);
+		if (jeje->str)
+			printf("[%d] %s\n", jeje->len, jeje->str);
+		else
+			printf("[0] (nil)\n");
 		jeje = jeje->next;
 		a++;
 	}
