@@ -21,7 +21,7 @@ list_t *add_node(list_t **head, const char *str)
 	if (x == NULL)
 	{
 		free(jeje);
-	        return (NULL);
+		return (NULL);
 	}
 
 	for (a = 0; str[a];)
