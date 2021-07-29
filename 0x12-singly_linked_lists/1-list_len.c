@@ -12,7 +12,7 @@ size_t list_len(const list_t *h)
 
 	a = 0;
 	jeje = h;
-	while(jeje != NULL)
+	while (jeje != NULL)
 	{
 		jeje = jeje->next;
 		a++;
