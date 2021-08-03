@@ -1,0 +1,14 @@
+#include "lists.h"
+#include <stdio.h>
+
+/**
+ *listint_len - find a number of elements in listint_t
+ *@h: head of th linkig list
+ *Return: return the number of elements
+ */
+size_t listint_len(const listint_t *h)
+{
+	const listint_t *c;
+	size_t count;
+
+	for(
