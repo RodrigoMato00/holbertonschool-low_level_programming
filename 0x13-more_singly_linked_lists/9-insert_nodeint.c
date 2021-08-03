@@ -26,18 +26,20 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		node++;
 		co = co->next;
 	}
+
 	if (node < idx)
 	{
-		free(new_node)
-			return (NULL);
+		free(new_node);
+	        return (NULL);
 	}
+
 	co = *head;
 	if (contador == idx)
 	{
 		new_node->next = *head;
 		*head = new_node;
 		return (*head);
-
+	}
 	while (contador != idx - 1)
 	{
 		co = co->next;
