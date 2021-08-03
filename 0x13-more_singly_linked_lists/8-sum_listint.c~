@@ -1,0 +1,22 @@
+#include "lists.h"
+
+/**
+ *
+ *
+ *
+ */
+int sum_listint(listint_t *head)
+{
+	int sum;
+	listint_t *co;
+
+	sum = 0;
+	co = head;
+
+	while (co != NULL)
+	{
+		sum += co->n;
+		co = co->next;
+	}
+	return (sum);
+}
