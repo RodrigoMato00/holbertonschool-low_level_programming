@@ -15,7 +15,7 @@ size_t print_listint_safe(const listint_t *head)
 	v = 0;
 	t = head;
 
-	if (head == NULL)
+	if (head == NULL || head->nex == NULL)
 		exit(98);
 
 	while (t)
