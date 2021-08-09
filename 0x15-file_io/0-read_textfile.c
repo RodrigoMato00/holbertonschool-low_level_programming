@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- *read_textfile - awokdfagoksdpomv
- *@filename: awkdf-osdkgoskdff-sdk
- *@letters: fkdñs,aodñkfñosd
- *Return: cbdjnlkwdjjfldmfli
+ *read_textfile - read text file
+ *@filename: name of the file
+ *@letters: letters number
+ *Return:  1 on success, -1 on failure
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -18,9 +18,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buf == NULL)
 		return (0);
 
-	a = open (filename , O_RDONLY);
-	b = read (a, buf, letters);
-	c = write (STDOUT_FILENO, buf, b);
+	a = open(filename, O_RDONLY);
+	b = read(a, buf, letters);
+	c = writ(STDOUT_FILENO, buf, b);
 
 	if (a == -1 || b == -1 || c == -1 || c != b)
 	{
@@ -29,6 +29,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	free(buf);
-	close (a);
+	close(a);
 	return (c);
 }
