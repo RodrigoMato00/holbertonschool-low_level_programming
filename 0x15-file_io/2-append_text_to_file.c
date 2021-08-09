@@ -8,35 +8,35 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-
-	int fd;
-	int sta;
-	int a;
+	int a, b, c;
 	char *buf;
 
 	if (filename == NULL)
 		return (-1);
 
 	if (text_content == NULL)
-		return (-1);
+	{
+		a = open(filename, O_CREAT, 0600);
+		if (a == -1)
+			return (-1);
+		return (1);
+	}
 
-	fd = open(filename, O_APPEND | O_WRONLY);
-	if (fd == -1)
-		return (-1);
-
-	for (a = 0; text_content[a] != '\0'; a++)
+	for (c = 0; text_content[c] != '\0'; c++)
 		;
-	buf = malloc(a * sizeof(char));
+	buf = malloc(c * sizeof(char));
 	if (buf == NULL)
 		return (-1);
 
-	sta = write(fd, text_content, a);
-	if (sta == -1)
-	{
+	a = open(filename, O_APPEND | O_WRONLY);
+	if (a == -1)
 		return (-1);
-	}
 
-	close(fd);
+	b = write(a, text_content, c);
+	if (b == -1)
+		return (-1);
+
+	close(a);
 	free(buf);
 	return (1);
 }
