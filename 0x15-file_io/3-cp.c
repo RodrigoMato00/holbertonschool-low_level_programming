@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	while ((l = read(file_f, buf, 1024) != 0)
+	while ((l = read(file_f, buf, 1024)) != 0)
 	{
 		if (l == -1)
 		{
