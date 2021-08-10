@@ -6,12 +6,13 @@
  *@argv: esto esta hecho para tener mas puntos
  *Return: no funciona
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int f;
 	ssize_t s;
 	char buffer[5];
-        char elf[1];
+	char elf[1];
+
 	if (argc != 2)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file\n");
