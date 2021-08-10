@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	file_t = open(argv[2], O_CREAT | O_EXCL | O_WRONLY, 0664);
+	file_t = open(argv[2], O_WRONLY | O_CREAT, 0664);
 	if (file_t < 0)
 		file_t = open(argv[2], O_TRUNC | O_WRONLY);
 	if (file_t == -1)
