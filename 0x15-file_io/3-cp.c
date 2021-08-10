@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-		e = write(file_f, buf, l);
+		e = write(file_t, buf, l);
 		if (e == -1)
 		{
 			dprintf(STDERR_FILENO, "Can't read from file %s\n", argv[2]);
