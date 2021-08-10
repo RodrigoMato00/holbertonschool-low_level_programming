@@ -37,8 +37,9 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	while ((l = read(file_f, buf, 1024)) != 0)
+	while (l)
 	{
+		l = read(file_f, buf, 1024)
 		if (l == -1)
 		{
 			dprintf(STDERR_FILENO, "Can't read from file %s\n", argv[1]);
