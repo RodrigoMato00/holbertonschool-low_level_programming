@@ -6,7 +6,7 @@
  *@argv: esto esta hecho para tener mas puntos
  *Return: no funciona
  */
-int main (int argc, char argv[])
+int main (int argc, char *argv[])
 {
 	int f;
 	ssize_t s;
