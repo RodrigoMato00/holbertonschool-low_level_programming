@@ -1,12 +1,12 @@
 #include "hash_tables.h"
 
 /**
- *hash_table_get - 
- *@ht: 
- *@key: 
- *Return: 
+ *hash_table_get - fogksjkckckfk
+ *@ht: pfsdkfmspokdfpok
+ *@key: kfjjgjfkcmkfkdk
+ *Return: kgkfkdjjrkkf
  */
-char *hash_table_get(const hash_table_t *ht, const char *key)
+Char *Hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int ind;
 	hash_node_t *buscador;
