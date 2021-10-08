@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #define _GNU_SOURCE
+
 /**
  * struct hash_node_s - Node of a hash table
  *
