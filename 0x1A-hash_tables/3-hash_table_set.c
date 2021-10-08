@@ -14,39 +14,39 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int ind;
 
 	if (key == NULL || value == NULL || ht == NULL)
-                return (0);
+		return (0);
 
-        ind = key_index((const unsigned char *)key, ht->size);
+	ind = key_index((const unsigned char *)key, ht->size);
 
-        temp = ht->array[ind];
+	temp = ht->array[ind];
 
 
-        while (temp)
-        {
-                if (strcmp(key, temp->key) == 0)
-                {
-                        free(temp->value);
-                        temp->value = strdup(value);
-                        return (1);
-                }
-                temp = temp->next;
-        }
+	while (temp)
+	{
+		if (strcmp(key, temp->key) == 0)
+		{
+			free(temp->value);
+			temp->value = strdup(value);
+			return (1);
+		}
+		temp = temp->next;
+	}
 
-        par = malloc(sizeof(hash_node_t));
+	par = malloc(sizeof(hash_node_t));
 
-        if (par == NULL)
-                return (0);
-        par->key = strdup(key);
-        par->value = strdup(value);
-        par->next = NULL;
+	if (par == NULL)
+		return (0);
+	par->key = strdup(key);
+	par->value = strdup(value);
+	par->next = NULL;
 
-        if (ht->array[ind] == NULL)
-        {
-                ht->array[ind] = par;
-                return (1);
-        }
-        temp = ht->array[ind];
-        par->next = temp;
-        ht->array[ind] = par;
-        return (1);
+	if (ht->array[ind] == NULL)
+	{
+		ht->array[ind] = par;
+		return (1);
+	}
+	temp = ht->array[ind];
+	par->next = temp;
+	ht->array[ind] = par;
+	return (1);
 }
