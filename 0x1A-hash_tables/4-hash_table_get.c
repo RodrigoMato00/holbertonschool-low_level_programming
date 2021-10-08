@@ -6,7 +6,7 @@
  *@key: kfjjgjfkcmkfkdk
  *Return: kgkfkdjjrkkf
  */
-Char *Hash_table_get(const hash_table_t *ht, const char *key)
+Char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int ind;
 	hash_node_t *buscador;
