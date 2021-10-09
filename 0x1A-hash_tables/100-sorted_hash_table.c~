@@ -10,7 +10,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 	shash_table_t *shash;
 	unsigned long int a;
 
-	shash = malloc(sizeof(shash_table_t));
+	ht = malloc(sizeof(shash_table_t));
 
 	if (shash == NULL)
 		return (NULL);
@@ -32,7 +32,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 
 /**
  *shash_table_get - fogksjkckckfk
- *@ht pfsdkfmspokdfpok
+ *@ht: pfsdkfmspokdfpok
  *@key: kfjjgjfkcmkfkdk
  *Return: kgkfkdjjrkkf
  */
@@ -64,8 +64,8 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-	shash_node_t *par;
-	shash_node_t *temp;
+	hash_node_t *par;
+	hash_node_t *temp;
 	unsigned long int ind;
 	char *c;
 
@@ -165,6 +165,8 @@ void shash_table_print(const shash_table_t *ht)
 	printf("}\n");
 }
 
+#include "hash_tables.h"
+
 /**
  *shash_table_print_rev - imprime la hash table
  *@ht: hash table a imprimir
@@ -207,7 +209,7 @@ void shash_table_delete(shash_table_t *ht)
 	if (ht == NULL)
 		return;
 
-	nodo = ht->shead;
+	node = ht->shead;
 	while (nodo)
 	{
 		temp = nodo->snext;
