@@ -32,7 +32,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 
 /**
  *shash_table_get - fogksjkckckfk
- *@ht pfsdkfmspokdfpok
+ *@ht: pfsdkfmspokdfpok
  *@key: kfjjgjfkcmkfkdk
  *Return: kgkfkdjjrkkf
  */
@@ -62,8 +62,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
  *@value: valor para almacenar la key
  *Return: 0 fallo, 1 exitosamente
  */
-int shash_table_set(shash_table_t *ht, const char *key, const char *value)
-{
+int shash_table_set(shash_table_t *ht, const char *key, const char *value) {
 	shash_node_t *par;
 	shash_node_t *temp;
 	unsigned long int ind;
@@ -71,34 +70,26 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 	if (key == NULL || value == NULL || ht == NULL)
 		return (0);
-
 	c = strdup(value);
 	if (c == NULL)
 		return (0);
-
 	ind = key_index((const unsigned char *)key, ht->size);
 	temp = ht->shead;
-
-	while (temp)
-	{
-		if (strcmp(temp->key, key) == 0)
-		{
+	while (temp) {
+		if (strcmp(temp->key, key) == 0) {
 			free(temp->value);
 			temp->value = c;
 			return (1);
 		}
 		temp = temp->snext;
 	}
-
 	par = malloc(sizeof(shash_node_t));
-	if (par == NULL)
-	{
+	if (par == NULL) {
 		free(c);
 		return (0);
 	}
 	par->key = strdup(key);
-	if (par->key == NULL)
-	{
+	if (par->key == NULL){
 		free(c);
 		free(par);
 		return (0);
@@ -106,25 +97,19 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	par->value = c;
 	par->next = ht->array[ind];
 	ht->array[ind] = par;
-
-	if (ht->shead == NULL)
-	{
+	if (ht->shead == NULL) {
 		par->sprev = NULL;
 		par->snext = NULL;
 		ht->shead = par;
 		ht->stail = par;
 	}
-
-	else if (strcmp(ht->shead->key, key) > 0)
-	{
+	else if (strcmp(ht->shead->key, key) > 0) {
 		par->sprev = NULL;
 		par->snext = ht->shead;
 		ht->shead->sprev = par;
 		ht->shead = par;
 	}
-
-	else
-	{
+	else {
 		temp = ht->shead;
 		while (temp->snext != NULL && strcmp(temp->snext->key, key) < 0)
 			temp = temp->snext;
@@ -136,7 +121,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			temp->snext->sprev = par;
 		temp->snext = par;
 	}
-
 	return (1);
 }
 
