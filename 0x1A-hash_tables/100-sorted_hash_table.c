@@ -89,7 +89,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value) {
 		return (0);
 	}
 	par->key = strdup(key);
-	if (par->key == NULL){
+	if (par->key == NULL) {
 		free(c);
 		free(par);
 		return (0);
