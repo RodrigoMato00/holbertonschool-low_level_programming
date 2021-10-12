@@ -1,0 +1,75 @@
+==============
+puts2
+==============
+
+Imprime un carácter de dos de una string seguido de una nueva linea
+
+Prototipo de la funcion
+void puts2(char *str)
+
+FORMA 1:
+{
+	int a;
+
+	a = 0;
+
+	while (str[a] != '\0')
+	{
+		if (a % 2 == 0)
+		{
+			_putchar(str[a]);
+		}
+		a++;
+	}
+	_putchar('\n');
+}
+
+FORMA 2:
+{
+	int a;
+	int len;
+
+	a = 0;
+	len = 0;
+	
+	while (str[a++])
+		a++;
+
+	for (a = 0; a < len; a += 2)
+		_putchar(str[a]);
+
+	_putchar('\n');
+}
+
+FORMA 3:
+{
+	int a;
+
+	for (a = 0; str[a] != '\0'; a++)
+	{
+		if (a % 2 == 0)
+			_putchar(str[a]);
+	}
+	
+	_putchar('\n');
+}
+
+FORMA 4:
+{
+	int contador;
+
+	contador = 0;
+
+	while (*(str + contador))
+	{
+		_putchar(*(str + contador));
+
+		if (*(str + contador + 1))
+			contador += 2;
+
+		else
+			contador++;
+	}
+
+	_putchar('\n');
+}

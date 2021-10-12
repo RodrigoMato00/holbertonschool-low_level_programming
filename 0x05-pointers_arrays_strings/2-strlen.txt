@@ -1,0 +1,59 @@
+==============
+strlen
+==============
+
+Esta funcion retorna el largo de una string
+
+Prototipo de la funcion 
+int _strlen(char *s)
+
+FORMA 1:
+{
+	int c;
+
+	for (c = 0; s[c] != '\0'; c++)
+		;
+
+	return (c);
+}
+
+FORMA 2:
+{
+	size_t largo = 0;
+
+	while (*s++)
+		largo++;
+
+	return (largo);
+}
+
+FORMA 3:
+{
+	int contador = 0;
+	while (s[icontador] != '\0')
+	{
+		contador++;
+	}
+	return (contador);
+}
+
+FORMA 4:
+{
+	int a = 0;
+
+	while (*(s + a))
+		a++;
+
+	return (a);
+}
+
+FORMA 5:
+{
+
+	int a;
+
+	while (*(s + a) != '\0')
+	      a++;
+	      
+	return (a);
+}

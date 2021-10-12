@@ -1,0 +1,26 @@
+==============
+
+==============
+
+Generador de contraseñas random
+
+Prototipo de la funcion 
+int main(void)
+
+FORMA 1:
+{
+	int mr;
+	int contador;
+	int total;
+
+	srand(time(NULL));
+	for (contadot = 0, total = 2772; total > 122; contador++)
+	{
+		mr = (rand() % 125) + 1;
+		printf("%c", mr);
+		total -= mr;
+	}
+	printf("%c", total);
+
+	return (0);
+}

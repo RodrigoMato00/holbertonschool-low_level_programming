@@ -1,0 +1,60 @@
+==============
+
+==============
+
+Imprime el numero de lelmentos en un array
+
+Prototipo de la funcion
+void print_array(int *a, int n)
+
+FORMA 1:
+{
+	int contador;
+
+	contador = 0;
+	
+	while (conador < n)
+	{
+		printf("%d", *(a + contador)); // printf("%d", a[contador]);
+		if (contador < (n - 1))
+			printf(", ");
+		contador++;
+	}
+
+	printf("\n");
+}
+
+FORMA 2:
+{
+	int i;
+
+	for (i = 0; i < n; i++)
+	{
+		printf("%d", a[i]);
+
+		if (i == n - 1)
+			continue;
+
+		printf(", ");
+	}
+
+	printf("\n");
+}
+
+FORMA 3:
+{
+	int i;
+
+	i = 0;
+
+	for (n--; n >= 0; n--, i++)
+	{
+		printf("%d", a[i]);
+		if (n > 0)
+		{
+			printf(", ");
+		}
+	}
+	
+	printf("\n");
+}

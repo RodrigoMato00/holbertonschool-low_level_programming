@@ -1,0 +1,64 @@
+==============
+print_rev
+==============
+
+Imprime una string al reverso seguido de una nueva linea
+
+Prototipo de la funcion 
+void print_rev(char *s)
+
+FORMA 1:
+{
+	int a;
+
+	for (a = 0; s[a] != '\0'; a++)
+		;
+
+	for (a--; a >= 0; a--)
+		_putchar(s[a]);
+
+	_putchar('\n');
+}
+
+FORMA 2:
+{
+	int len = 0;
+	int a;
+
+	while (s[a++])
+		len++;
+
+	for (a = len - 1; a >= 0; a--)
+		_putchar(s[a]);
+
+	_putchar('\n');
+}
+
+FORMA 3:
+{
+	int contador = strlen(s) - 1;
+
+	while (contador >= 0)
+	{
+		_putchar(*(s + contador));
+		contador--;
+	}
+	_putchar('\n');
+}
+
+FORMA 4:
+{
+	int a = 0;
+
+	while (*(s + a) != '\0')
+	{
+		a++;
+	}
+	a -= 1;
+	while (a >= 0)
+	{
+		_putchar(*(s + a));
+		a--;
+	}
+	_putchar('\n');
+}

@@ -1,0 +1,67 @@
+==============
+Puts
+==============
+
+Esta funcion imprime un string seguida de una nueva linea
+
+Prototipo de la funcion 
+void _puts(char *str)
+
+FORMA 1:
+{
+	int a;
+
+	for (a = 0; str[a] != '\0'; a++)
+	{
+		_putchar(str[a]);
+	}
+	_putchar('\n');
+}
+
+FORMA 2:
+{
+	int a = 0;
+	while (str[a] != '\0')
+	{
+		_putchar(str[a]);
+		a++;
+	}
+	_putchar('\n');
+}
+
+FORMA 3:
+
+{
+	char c;
+	int a = 0;
+
+
+	while (*(str + a) != '\0')
+	{
+		a = *(str + a);
+		_putchar(c);
+		a++;
+	}
+	_putchar('\n');
+
+}
+
+FORMA 4:
+{
+	int a = 0;
+
+	while (*(str + a))
+	{
+		_putchar(*(str + a));
+		a++;
+	}
+	_putchar('\n');
+}
+
+FORMA 5:
+{
+	while (*str)
+		_putchar(*str++);
+
+	_putchar('\n');
+}

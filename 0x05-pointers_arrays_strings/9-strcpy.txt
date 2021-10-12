@@ -1,0 +1,52 @@
+==============
+_strcpy
+==============
+
+copia una string
+
+Prototipo de la funcion 
+char *_strcpy(char *dest, char *src)
+
+FORMA 1:
+{
+	int contador;
+
+	contador = 0;
+	
+	while (*(src + contador) != 0)
+	{
+		*(dest + contador) = *(src + contador);
+		contador++;
+	}
+	*(dest + contador) = *(src + contador);
+	return (dest);
+}
+
+FORMA 2:
+{
+	int i;
+
+	i = 0;
+
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+
+	return (dest);
+}
+
+FORMA 3:
+{
+	int i;
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+	
+	dest[i] = '\0';
+
+	return (dest);
+}

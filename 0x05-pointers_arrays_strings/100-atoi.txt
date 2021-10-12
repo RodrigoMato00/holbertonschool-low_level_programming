@@ -1,0 +1,97 @@
+==============
+_atoi
+==============
+
+Convierte una string a un int (entero)
+
+Prototipo de la funcion
+int _atoi(char *s)
+
+FORMA 1:
+{
+	int sign;
+	unsigned int numero;
+	
+	sign = 0;
+	numero = 0;
+	
+	do {
+		if (*s == '-')
+			sign *= -1;
+
+		else if (*s >= '0' && *s <= '9')
+			numero = (numero * 10) + (*s - '0');
+
+		else if (numero > 0)
+			break;
+
+	} while (*s++);
+
+	return (numero * sign);
+}
+
+FORMA 2:
+{
+	int i;
+	int sign;
+	int numero;
+
+	i = 0;
+	while ( *(s + i) != '\0')
+	{
+		i++;
+		
+	if ( *(s + i) == '-')
+	{ 
+		sign = -1;
+	}
+	
+	else if ( *(s + i) == '+')
+			{
+			sign = 1;
+			}
+	}
+	
+	i = 0;
+	while ( *(s + i) != '\0')
+	{
+		if (* (s + i) >= '0' && *(s + i) <= 9)
+		{
+			numero *= 10;
+	numero  +=(*(s + i) + '0');
+			i++;
+		
+	}
+	}
+	return sign * numero;
+	
+}
+
+FORMA 3:
+{
+	int i;
+	int h, p;
+
+	h = 0;
+	p = -1;
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] == '-')
+			p *= -1;
+
+		if (s[i] > 47 && s[i] < 58)
+		{
+			if (h < 0)
+				h = (h * 10) - (s[i] - '0');
+			else
+				h = (s[i] - '0') * -1;
+
+			if (s[i + 1] < 48 || s[i + 1] > 57)
+				break;
+		}
+	}
+	if (p < 0)
+		h *= -1;
+
+	return (h);
+}

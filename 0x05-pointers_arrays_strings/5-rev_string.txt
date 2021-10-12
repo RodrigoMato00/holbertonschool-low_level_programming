@@ -1,0 +1,92 @@
+==============
+rev_string
+==============
+
+invierte una tring
+
+Prototipo de la funcion
+void rev_string(char *s)
+
+FORMA 1:
+{
+	int a;
+	int b;
+	int c;
+
+	a = 0;
+	b = 0;
+	
+	while (s[a] != '\0')
+	{
+		a++;
+	}
+	a--;
+
+	while (a > b)
+	{
+		c = s[a];
+		s[a--] = s[j];
+		s[b++] = c;
+	}
+}
+
+FORMA 2:
+{
+	int len = 0;
+	int a;
+	char temporal;
+
+	len = 0;
+	a = 0;
+	
+	while (s[a++])
+		len++;
+
+	for (a = len - 1; a >= len / 2; a--)
+	{
+		temporal = s[a];
+		s[a] = s[len - a - 1];
+		s[len - a - 1] = temporal;
+	}
+}
+
+FORMA 3:
+{
+	int a, b, c;
+	char temporal;
+
+	for (a = 0; s[a] != '\0'; a++)
+		;
+
+	c = a;
+	for (a--, b = 0; b < l / 2; a--, b++)
+	{
+		temporal = s[b];
+		s[b] = s[a];
+		s[a] = temporal;
+	}
+}
+
+FORMA 4:
+{
+	int contador;
+	int a;
+	char temporal[1024];
+
+	contador = 0;
+	a = 0;
+	
+	while (*(s + contador))
+	{
+		*(temporal + contador) = *(s + contador);
+		contador++;
+	}
+	contador--;
+	
+	while (contador >= 0)
+	{
+		*(s + contador) = *(temporal + a);
+		a++;
+		contador--;
+	}
+}

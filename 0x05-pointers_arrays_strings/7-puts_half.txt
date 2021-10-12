@@ -1,0 +1,92 @@
+==============
+puts_half
+==============
+
+Imprime la mitad de una string seguido de una nueva linea
+
+Prototipo de la funcion
+void puts_half(char *str)
+
+FORMA 1:
+{
+	int a;
+
+	for (a = 0; str[a] != '\0'; a++)
+		;
+
+	a++;
+
+	for (a /= 2; str[a] != '\0'; a++)
+	{
+		_putchar(str[a]);
+	}
+	_putchar('\n');
+}
+
+FORMA 2:
+{
+	int a;
+	int len;
+	int n;
+
+	a = 0;
+	len = 0;
+	
+	while (str[a++])
+		len++;
+
+	if ((len % 2) == 0)
+		n = len / 2;
+
+	else
+		n = (len + 1) / 2;
+
+	for (a = n; a < len; a++)
+		_putchar(str[a]);
+
+	_putchar('\n');
+}
+
+FORMA 3:
+{
+	int a;
+	int len = strlen(str);
+
+	a = len / 2;
+	if (len % 2)
+		a++;
+
+	while (a < len)
+	{
+		_putchar(*(str + a));
+		a++;
+	}
+	
+	_putchar('\n');
+}
+
+FORMA 4:
+{
+	int a;
+	int b;
+
+	for (a = 0; *(str + a) != '\0'; a++)
+	{
+		a++;
+	}
+	
+	if (a % 2 != 0)
+		b = ((a - 1) / 2);
+		
+	else
+		b = a / 2;
+	a--;
+
+	while (b <= a)
+	{
+		_putchar(*(str + b));
+		b++;
+	}
+
+	_putchar('\n');
+}
