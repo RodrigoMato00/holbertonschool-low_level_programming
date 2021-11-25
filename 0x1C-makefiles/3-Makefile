@@ -4,17 +4,17 @@ OBJ = $(SRC:.c=.o)
 RM = rm -f
 NAME = school
 all:$(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+    $(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) $(wildcard *~) $(NAME)
+    $(RM) $(wildcard *~) $(NAME)
 
 oclean:
-	$(RM) $(OBJ)
+    $(RM) $(OBJ)
 
 fclean:
-	$(RM) $(wildcard *~) $(NAME)
-	$(RM) $(OBJ)
+    $(RM) $(wildcard *~) $(NAME)
+    $(RM) $(OBJ)
 re:
-	$(RM) $(wildcard *~) $(NAME)
-	$(CC) $(OBJ) -o $(NAME)
+    $(RM) $(wildcard *~) $(NAME)
+    $(CC) $(OBJ) -o $(NAME)
