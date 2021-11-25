@@ -13,6 +13,7 @@ oclean:
 	$(RM) -f $(OBJ)
 
 fclean:
+	$(RM) -f $(OBJ)
 	$(RM) -f $(wildcard *~) $(NAME)
 re:
 	$(RM) -f $(OBJ)
