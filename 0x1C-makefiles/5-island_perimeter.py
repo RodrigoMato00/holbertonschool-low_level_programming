@@ -8,6 +8,8 @@ grid is a list of list of integers:
 -Grid cells are connected horizontally/vertically (not diagonally).
 -Grid is rectangular, width and height don’t exceed 100
 """
+
+
 def island_perimeter(grid):
     """ grid is a list of list of integers:
     -0 represents a water zone
