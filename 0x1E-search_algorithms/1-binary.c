@@ -19,7 +19,7 @@ for (med = 0, end = size - 1; end >= med;)
 		printf("Searching in array: ");
 		for (a = med; a < end; a++)
 			printf("%d, ", array[a]);
-		
+
         printf("%d\n", array[a]);
 
 		a = med + (end - med) / 2;
