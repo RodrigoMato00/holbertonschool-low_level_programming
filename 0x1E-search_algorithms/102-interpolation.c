@@ -7,7 +7,7 @@
  * @size: size of the array
  * @value: value to search for
  * Return: index of the element or -1 if not found
- */
+ **/
 int interpolation_search(int *array, size_t size, int value)
 {
 
@@ -18,7 +18,7 @@ int interpolation_search(int *array, size_t size, int value)
 
 	for (left = 0, right = size - 1; left <= right;)
 	{
-		pos = left + (((double)(right - left) / (array[right] - array[left])));
+		pos = left + (((double)(right - left) / (array[right] - array[left])) * (value - array[left]));
 
 		if (pos <= size)
 			printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
@@ -30,10 +30,13 @@ int interpolation_search(int *array, size_t size, int value)
 		}
 		if (array[pos] > value)
 			right = pos - 1;
+
 		if (array[pos] < value)
 			left = pos + 1;
+
 		else if (array[pos] == value)
 			return (pos);
+
 		else
 			return (pos);
 	}
