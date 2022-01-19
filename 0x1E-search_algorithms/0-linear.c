@@ -5,21 +5,21 @@
  *@array: array of integers
  *@size: size of array
  *@value: value to search for in array of integers
- *return: index of value or -1 if not found
- */
+ *Return: index of value or -1 if not found
+ **/
 int linear_search(int *array, size_t size, int value)
 {
-    size_t a;
+	size_t a;
 
-    if (!array)
-        return (-1);
+	if (!array)
+		return (-1);
 
-    for (a = 0; a < size; a++)
-    {
-        printf ("Value checked array[%li] = [%i]\n", a, array[a]);
+	for (a = 0; a < size; a++)
+	{
+		printf("Value checked array[%li] = [%i]\n", a, array[a]);
 
-        if (array[a] == value)
-            return (a);
-    }
-    return (-1);
+		if (array[a] == value)
+			return (a);
+	}
+	return (-1);
 }
