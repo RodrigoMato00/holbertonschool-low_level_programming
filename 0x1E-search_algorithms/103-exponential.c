@@ -60,7 +60,7 @@ int exponential_search(int *array, size_t size, int value)
 		printf("Value checked array[%lu] = [%d]\n", a, array[a]);
 		a <<= 1;
 	}
-	
+
 	nsize = (a >= size ? size : a + 1) - (a >> 1);
 	a >>= 1;
 
