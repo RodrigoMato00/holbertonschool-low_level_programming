@@ -12,7 +12,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	listint_t *a, *jump;
 	size_t pos, nsize;
 
-	if (list == NULL)
+	if (!list)
 		return (NULL);
 
 	pos = 0;
