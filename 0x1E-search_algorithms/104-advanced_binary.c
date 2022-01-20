@@ -10,7 +10,7 @@
 int *rec_advanced_binary_search(int *array, size_t size, int value)
 {
 
-	size_t a= 0;
+	size_t a = 0;
 
 	if (!array)
 		return (NULL);
@@ -41,12 +41,16 @@ int *rec_advanced_binary_search(int *array, size_t size, int value)
  *@value: value to search for
  *Return: index of the value or -1 if not found
  **/
- int advanced_binary(int *array, size_t size, int value)
+int advanced_binary(int *array, size_t size, int value)
 {
 	int *index;
+
 	index = rec_advanced_binary_search(array, size, value);
+
 	if (!index)
 		return (-1);
+
 	else
 		return (index - array);
 }
+
