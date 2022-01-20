@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- *muv_list - searches for a value in an array
+ *jump_list - searches for a value in an array
  *@list: pointer to the first element of the array
  *@value: value to search for
  *@size: size of the array
