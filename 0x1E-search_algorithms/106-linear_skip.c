@@ -2,14 +2,13 @@
 
 /**
  *linear_skip - linear search algorithm
- *@array: array to search
- *@size: size of array
+ *@list: list to search
  *@value: value to search for
  *Return: index of value or -1 if not found
  */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-    skiplist_t *a, *muv;
+	skiplist_t *a, *muv;
 
 	if (!list)
 		return (NULL);
@@ -24,7 +23,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 					muv->index, muv->n);
 		}
 
-        else
+		else
 		{
 			for (; muv->next != NULL;)
 				muv = muv->next;
@@ -37,7 +36,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	for (; a->index < muv->index && a->n < value;  a = a->next)
 		printf("Value checked at index [%ld] = [%d]\n", a->index, a->n);
 
-    printf("Value checked at index [%ld] = [%d]\n", a->index, a->n);
+	printf("Value checked at index [%ld] = [%d]\n", a->index, a->n);
 
 	return (a->n == value ? a : NULL);
 }
