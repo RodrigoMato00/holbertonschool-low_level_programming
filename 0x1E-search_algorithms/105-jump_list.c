@@ -24,7 +24,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		for (pos += nsize; jump->index < pos; jump = jump->next)
 		{
 			if (jump->index + 1 == size)
-				return (0);
+				break;
 		}
 
 		printf("Value checked at index [%li] = [%i]\n", jump->index, jump->n);
